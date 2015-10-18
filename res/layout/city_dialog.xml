@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/dcityroot"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:text="@string/cityDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+   <LinearLayout
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:inputType="text"
+            android:id="@+id/citysearch"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent" />
+        <Button
+	        android:id="@+id/buttonSearch"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:text="@string/search" />
+    </LinearLayout>
+    
+   <ListView 
+		android:id="@+id/citieslist"
+		android:layout_width="fill_parent"
+		android:layout_weight="1"
+		android:layout_height="0dp"/>
+   <TextView
+        android:id="@+id/searchStatus"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+		android:layout_height="0dp"/>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dclose" />
+
+</LinearLayout>

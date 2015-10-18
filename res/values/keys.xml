@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="key_autorun">autorun</string>
+	<string name="key_autoclose">autoclose</string>
+	<string name="key_show_system">blanksystem</string>
+    <string name="key_brightness">brightness</string>
+    <string name="value_brightness_system">system</string>
+	<string name="value_brightness_manual">value</string>
+	<string name="value_brightness_camera">camera</string>
+	<string name="key_brightness_manual_value">brightness_manual_value</string>
+	<string name="key_color">color</string>
+	<string name="key_background_color">background_color</string>
+	<string name="key_city">city</string>
+	<string name="key_city_id">city_id</string>
+    <string name="key_update">update</string>
+    <string name="key_tunit">tunit</string>
+    <string name="key_punit">punit</string>
+    <string name="key_sunit">sunit</string>
+    <string name="key_blevel">blevel</string>
+    <string name="key_orientation">orientation</string>
+    <string name="key_seconds">seconds</string>
+    <string name="key_dot">dot</string>
+    <string name="value_dot_no">no</string>
+	<string name="value_dot_flash">flash</string>
+	<string name="value_dot_perm">permanent</string>
+    <string name="key_now">now</string>
+    <string name="key_today">today</string>
+    <string name="key_sun">sun</string>
+    <string name="key_alarm">alarm</string>
+    <string name="key_weather_24h">weather_24h</string>
+    <string name="key_weather_week">weather_week</string>
+    <string name="key_flip">flip</string>
+    
+</resources>

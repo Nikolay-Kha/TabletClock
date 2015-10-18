@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tablet Clock</string>
+    <string name="settings">Settings</string>
+    <string name="update_weather">Update weather</string>
+    <string name="setup_alarm">Setup alarm clock</string>
+    <string name="share">Share</string>
+    <string name="rateus">Rate us</string>
+    <string name="about">About</string>
+    <string name="exit">Exit</string>
+    <string name="now">Now</string>
+    <string name="today">Today</string>
+    <string name="night">Night</string>
+    <string name="evening">Evening</string>
+    <string name="morning">Morning</string>
+    <string name="day">Day</string>
+	<string name="no">no</string>
+	<string name="off">off</string>
+	<string name="extra1" formatted="false" >Today is %s, sunset: %s, sunrise: %s</string>
+	<string name="extra2" formatted="false" >Today sunset: %s, sunrise: %s</string>
+	<string name="Celsius">C</string>
+	<string name="Fahrenheit">F</string>
+	<string name="percent">%</string>
+	<string name="percents">percents</string>
+	<string name="hPa">hPa</string>
+	<string name="mmHg">mmHg</string>
+	<string name="inHg">inHg</string>
+	<string name="MetersPS">m/s</string>
+	<string name="MilesPH">mph</string>	
+	<string name="mm">mm</string>	
+	<string name="Unknown">unknow</string>
+	<string name="h">h</string>	
+	<string name="N">N</string>
+	<string name="S">S</string>
+	<string name="W">W</string>
+	<string name="E">E</string>
+	<string name="r">R</string>
+	<string name="g">G</string>
+	<string name="b">B</string>
+	<string name="aboutTitle">About</string>
+	<string name="aboutText">Tablet Clock for Android.\nWritten by GreenLog\ne-mail: greenlogger@gmail.com\nWeather provided by OpenWeatherMap\nhttp://openweathermap.org\nAll weather data are provided under the CC-BY-SA 2.0 license\nhttp://creativecommons.org/licenses/by-sa/2.0</string>
+	<string name="aboutCloseButton">Close</string>
+	<string name="weather_updated">Weather has been updated</string>
+	<string name="weather_updated_error">Error while wheather update. Check internet connection.</string>
+	<string name="share_text">Turn your old tablet PC into wall clock with weather forecast! </string>
+	<string name="mins">minutes</string>	
+	<string name="hour">hour</string>	
+	<string name="hours">hours</string>	
+	<string name="hours6">hours</string>	
+	<string name="dclose">Close</string>	
+	<string name="dbrightness">Brightness: </string>
+	<string name="cityDescription">Type here name (full or part) of your city, press search and select from list. Only English city name is acceptable.</string>	
+	<string name="search_process">Search....</string>
+	<string name="search">Search</string>
+	<string name="notfound">Not found. Check your city English name, check internet connection and try again.</string>
+	<string name="firstTime">Select city for weather forecast</string>
+	<string name="alerror">System wide alarm clock not found</string>
+	<string name="battery_till">Plugged or battery more</string>
+	<string name="no_keep">Do not keep screen on</string>
+	<string name="keep_plugged">Only when plugged</string>
+	<string name="outdated">The data out of date. Check internet connection and device time.</string>
+	<string name="cat1">Weather</string>
+	<string name="cat2">Hardware</string>
+	<string name="cat3">Appearance</string>	
+		
+	<string name="cat1_city">City</string>
+	<string name="cat1_update_period">Weather update period</string>
+	<string name="cat1_temperature_units">Temperature units</string>	
+	<string name="cat1_pressure_units">Pressure units</string>
+	<string name="cat1_speed_units">Speed units</string>
+		
+	<string name="cat2_brightness">Brightness</string>
+	<string name="cat2_key_system">By system</string>
+	<string name="cat2_brightness_camera">Use camera as light sensor</string>
+	<string name="cat2_brightness_manual">Adjust manual</string>	
+	<string name="cat2_battery_level">Keep screen on</string>
+	<string name="cat2_orientation">Screen rotation</string>
+	<string name="cat2_orientation_l">Landscape</string>
+	<string name="cat2_orientation_p">Portrait</string>
+	<string name="cat2_orientation_rl">Reverse landscape</string>
+	<string name="cat2_orientation_rp">Reverse portrait</string>
+	<string name="cat2_orientation_sensor">Use sensor (if exist)</string>
+	<string name="cat2_autorun">Autorun</string>
+	<string name="cat2_autorun_summary">Automatically start when plugged</string>
+	<string name="cat2_autoclose">Autoclose</string>
+	<string name="cat2_autoclose_summary">Automatically close when unplugged</string>
+	
+	<string name="cat3_system">System time settings</string>
+	<string name="cat3_system_summary">Time, date and their formats are taken from system</string>
+	<string name="cat3_color">Text color</string>
+	<string name="cat3_background_color">Background color</string>
+	<string name="cat3_seconds">Show seconds</string>
+	<string name="cat3_seconds_summary">In this case time font will be smaller</string>	
+	<string name="cat3_dot">Colon</string>
+	<string name="cat3_dot_no">No</string>	
+	<string name="cat3_dot_flash">Flash every half seconds</string>	
+	<string name="cat3_dot_perm">Permanent</string>	
+	<string name="cat3_now_weather">Now weather</string>
+	<string name="cat3_now_weather_summary">Display current weather</string>	
+	<string name="cat3_today">Date</string>
+	<string name="cat3_today_summary">Display date</string>
+	<string name="cat3_sun">Sun</string>
+	<string name="cat3_sun_summary">Display sunset, sunrise time for today</string>
+	<string name="cat3_alarm">Alarm clock</string>
+	<string name="cat3_alarm_summary">Display info for the next alarm clock</string>	
+	<string name="cat3_weather_24h">24 hours forecast</string>
+	<string name="cat3_weather_24h_summary">Display detailed forecast for next 24 hours</string>	
+	<string name="cat3_weather_week">Week forecast</string>
+	<string name="cat3_weather_week_summary">Display week forecast</string>			
+	
+	
+	<!-- Check WeatherUnits to view indexes for default units -->
+	<string name="temperature_default_units">0</string>
+	<string name="pressure_default_units">0</string>
+	<string name="speed_default_units">0</string>	
+	
+</resources>

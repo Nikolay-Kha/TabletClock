@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Check WeatherUnits to view indexes for default units -->
+	<string name="temperature_default_units">1</string>
+	<string name="pressure_default_units">2</string>
+	<string name="speed_default_units">1</string>		
+</resources>

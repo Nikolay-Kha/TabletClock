@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="settings">Настройки</string>
+    <string name="update_weather">Обновить погоду</string>
+    <string name="setup_alarm">Установить будильник</string>
+    <string name="share">Поделиться</string>
+    <string name="rateus">Оценить нас</string>
+    <string name="about">О программе</string>
+    <string name="exit">Выход</string>
+    <string name="now">Сейчас</string>
+    <string name="today">Сегодня</string>
+    <string name="night">Ночь</string>
+    <string name="evening">Вечер</string>
+    <string name="morning">Утро</string>
+    <string name="day">День</string>
+	<string name="no">нет</string>
+	<string name="off">выкл</string>
+	<string name="extra1" formatted="false" >Сегодня %s, восход: %s, закат: %s</string>
+	<string name="extra2" formatted="false" >Сегодня восход: %s, закат: %s</string>
+	<string name="Celsius">C</string>
+	<string name="Fahrenheit">F</string>
+	<string name="percent">%</string>
+	<string name="percents">процентов</string>
+	<string name="hPa">гПа</string>
+	<string name="mmHg">мм рт.ст.</string>
+	<string name="inHg">inHg</string>
+	<string name="MetersPS">м/с</string>
+	<string name="MilesPH">mph</string>	
+	<string name="mm">мм</string>	
+	<string name="Unknown">неизвестно</string>
+	<string name="h">ч</string>	
+	<string name="N">С</string>
+	<string name="S">Ю</string>
+	<string name="W">З</string>
+	<string name="E">В</string>
+	<string name="aboutTitle">О программе</string>
+	<string name="aboutText">Tablet Clock для Андроид.\nНаписано GreenLog\ne-mail: greenlogger@gmail.com\nПогода предоставлена OpenWeatherMap\nhttp://openweathermap.org\nВсе сведения о погоде по лицензий CC-BY-SA 2.0\nhttp://creativecommons.org/licenses/by-sa/2.0</string>
+	<string name="aboutCloseButton">Закрыть</string>
+	<string name="weather_updated">Погода обновлена</string>
+	<string name="weather_updated_error">Ошибка при обновлении погоды. Проверьте подключения к Интернету.</string>
+	<string name="share_text">Преврати свой старый планшет в настенные часы с прогнозом погоды для дома! </string>
+	<string name="mins">минут</string>	
+	<string name="hour">час</string>	
+	<string name="hours">часа</string>	
+	<string name="hours6">часов</string>	
+	<string name="dclose">Закрыть</string>	
+	<string name="dbrightness">Яркость: </string>
+	<string name="cityDescription">Введите здесь имя города (полное или начало), нажмите искать и выберите город из списка. Только английские имена городов.</string>	
+	<string name="search_process">Поиск....</string>
+	<string name="search">Искать</string>
+	<string name="notfound">Не найдено. Проверьте правильность английского имени города, проверьте подключение к Интернету и попробуйте еще раз.</string>
+	<string name="firstTime">Выберите город для прогноза погоды</string>
+	<string name="alerror">Приложение будильник не найдено в системе</string>
+	<string name="battery_till">Подключен или батарея более</string>
+	<string name="no_keep">Не держать экран включенным</string>
+	<string name="keep_plugged">Только когда подключен</string>
+	<string name="outdated">Данные устарели. Проверьте подключение к интернету и время на устройстве.</string>
+	<string name="cat1">Погода</string>
+	<string name="cat2">Устройство</string>
+	<string name="cat3">Внешний вид</string>	
+		
+	<string name="cat1_city">Город</string>
+	<string name="cat1_update_period">Интервал обновления погоды</string>
+	<string name="cat1_temperature_units">Единицы температуры</string>	
+	<string name="cat1_pressure_units">Единицы давления</string>
+	<string name="cat1_speed_units">Единицы скорости</string>
+		
+	<string name="cat2_brightness">Яркость</string>
+	<string name="cat2_key_system">Из системы</string>
+	<string name="cat2_brightness_camera">Использовать камеру как датчик освещенности</string>
+	<string name="cat2_brightness_manual">Настроить вручную</string>	
+	<string name="cat2_battery_level">Держать экран включенным</string>
+	<string name="cat2_orientation">Поворот экрана</string>
+	<string name="cat2_orientation_l">Альбомная</string>
+	<string name="cat2_orientation_p">Книжная</string>
+	<string name="cat2_orientation_rl">Альбомная наоборот</string>
+	<string name="cat2_orientation_rp">Книжная наоборот</string>
+	<string name="cat2_orientation_sensor">Использовать датчик (если есть)</string>
+	<string name="cat2_autorun">Автозапуск</string>
+	<string name="cat2_autorun_summary">Автоматический запускать при подключении к ЗУ</string>
+	<string name="cat2_autoclose">Автозакрытие</string>
+	<string name="cat2_autoclose_summary">Автоматический закрывать при отключении от ЗУ</string>
+	
+	<string name="cat3_system">Системные настройки времени</string>
+	<string name="cat3_system_summary">Дата, время и их форматы берутся из системы</string>
+	<string name="cat3_color">Цвет текста</string>
+	<string name="cat3_background_color">Цвет фона</string>
+	<string name="cat3_seconds">Отображать секунды</string>
+	<string name="cat3_seconds_summary">В этом случае шрифт будет меньше</string>	
+	<string name="cat3_dot">Разделитель</string>
+	<string name="cat3_dot_no">Нет</string>	
+	<string name="cat3_dot_flash">Мигать каждые полсекунды</string>	
+	<string name="cat3_dot_perm">Постоянный</string>	
+	<string name="cat3_now_weather">Погода сейчас</string>
+	<string name="cat3_now_weather_summary">Отображать текущую погоду</string>	
+	<string name="cat3_today">Дата</string>
+	<string name="cat3_today_summary">Отображать дату</string>
+	<string name="cat3_sun">Солнце</string>
+	<string name="cat3_sun_summary">Отображать время восхода и заката солнца</string>
+	<string name="cat3_alarm">Будильник</string>
+	<string name="cat3_alarm_summary">Показывать информацию о ближайшем будильнике</string>	
+	<string name="cat3_weather_24h">24 часовой прогноз</string>
+	<string name="cat3_weather_24h_summary">Отображать подробный прогноз на следующие 24 часа</string>	
+	<string name="cat3_weather_week">Недельный прогноз</string>
+	<string name="cat3_weather_week_summary">Отображать прогноз погоды на следующую неделю</string>			
+	
+</resources>

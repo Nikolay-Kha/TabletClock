@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/m_update_weather"
+        android:title="@string/update_weather"/>
+    <item
+        android:id="@+id/m_setup_alarm"
+        android:title="@string/setup_alarm"/>
+    <item
+        android:id="@+id/m_settings"
+        android:title="@string/settings"/>
+    <item
+        android:id="@+id/m_share"
+        android:title="@string/share"/>
+    <item
+        android:id="@+id/m_rateus"
+        android:title="@string/rateus"/>
+    
+    <item
+        android:id="@+id/m_about"
+        android:title="@string/about"/>
+    
+    <item
+        android:id="@+id/m_exit"
+        android:title="@string/exit"/>
+    
+</menu>

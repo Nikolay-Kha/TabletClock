@@ -1,0 +1,175 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/dcroot"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <lcf.clock.BigTextView
+        android:id="@+id/dtimeView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:baselineAligned="false"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+	        android:orientation="vertical"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent" >
+	        <TextView
+	            android:layout_weight="1"
+	            android:gravity="center_vertical"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+            	android:text="@string/r" />
+	        <TextView
+	            android:layout_weight="1"
+	            android:gravity="center_vertical"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+            	android:text="@string/g" />
+	        <TextView
+	            android:layout_weight="1"
+	            android:gravity="center_vertical"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+            	android:text="@string/b" />
+        </LinearLayout>
+
+        <LinearLayout
+	        android:orientation="vertical"
+	        android:layout_width="0dp"
+	        android:layout_weight="1"
+	        android:paddingLeft="15dp"
+	        android:paddingRight="15dp"
+	        android:layout_height="fill_parent" >
+	        <SeekBar
+	            android:layout_weight="1"
+	            android:paddingTop="10dp"
+        		android:paddingBottom="10dp"
+	            android:id="@+id/rSeek"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content" />
+
+	        <SeekBar
+	            android:layout_weight="1"
+	            android:paddingTop="10dp"
+        		android:paddingBottom="10dp"
+	            android:id="@+id/gSeek"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content" />
+	        <SeekBar
+	            android:layout_weight="1"
+	            android:paddingTop="10dp"
+        		android:paddingBottom="10dp"
+	            android:id="@+id/bSeek"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content" />
+		</LinearLayout>
+		
+        <LinearLayout
+	        android:orientation="vertical"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent" >
+	        <TextView
+	            android:layout_weight="1"
+	            android:gravity="right|center_vertical"
+	            android:id="@+id/colorR"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" />
+	        <TextView
+	            android:layout_weight="1"
+	            android:gravity="right|center_vertical"
+	            android:id="@+id/colorG"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" />
+	        <TextView
+	            android:layout_weight="1"
+	            android:gravity="right|center_vertical"
+	            android:id="@+id/colorB"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" />
+	        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        	android:id="@+id/buttonLayout"
+        	android:orientation="horizontal"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content" >
+        <Button
+	        android:layout_weight="1"
+	        android:id="@+id/buttonR"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:background="#FF0000"
+	        />
+        <Button
+	        android:layout_weight="1"
+	        android:id="@+id/buttonG"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:background="#00FF00" />
+		<Button
+		    android:layout_weight="1"
+	        android:id="@+id/buttonB"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	         android:background="#0000FF" />
+		<Button
+		    android:layout_weight="1"
+	        android:id="@+id/buttonO"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:background="#FFA000" />
+		<Button
+		    android:layout_weight="1"
+	        android:id="@+id/buttonY"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:background="#FFFF00" />
+		<Button
+		    android:layout_weight="1"
+	        android:id="@+id/buttonV"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:background="#8B00FF" />
+		<Button
+		    android:layout_weight="1"
+	        android:id="@+id/buttonP"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:background="#800080" />
+		<Button
+		    android:layout_weight="1"
+	        android:id="@+id/buttonC"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:background="#00FFFF" />
+		<Button
+		    android:layout_weight="1"
+	        android:id="@+id/buttonW"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:background="#FFFFFF" />
+		<Button
+		    android:layout_weight="1"
+	        android:id="@+id/buttonBl"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:background="#000000" />
+	    <Button
+	        android:layout_marginLeft="20dp"
+	        android:id="@+id/button2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:text="@string/dclose" />
+    </LinearLayout>
+
+</LinearLayout>

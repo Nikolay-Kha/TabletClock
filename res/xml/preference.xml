@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory
+            android:title="@string/cat1" >
+        <Preference
+                android:key="@string/key_city"
+                android:defaultValue=""
+                android:title="@string/cat1_city" />
+        <ListPreference
+            	android:defaultValue="30"
+                android:key="@string/key_update"
+                android:title="@string/cat1_update_period" />
+        <ListPreference
+                android:key="@string/key_tunit"
+                android:defaultValue="@string/temperature_default_units"
+                android:title="@string/cat1_temperature_units" />
+        <ListPreference
+                android:key="@string/key_punit"
+                android:defaultValue="@string/pressure_default_units"
+                android:title="@string/cat1_pressure_units" />
+        <ListPreference
+                android:key="@string/key_sunit"
+                android:defaultValue="@string/speed_default_units"
+                android:title="@string/cat1_speed_units" />
+    </PreferenceCategory>
+ 
+    <PreferenceCategory
+            android:title="@string/cat2" >
+        <ListPreference
+            	android:defaultValue="@string/value_brightness_system"
+                android:key="@string/key_brightness"
+                android:title="@string/cat2_brightness" />
+        <ListPreference
+                android:key="@string/key_blevel"
+                android:defaultValue="80"
+                android:title="@string/cat2_battery_level" />
+        <ListPreference
+                android:key="@string/key_orientation"
+                android:defaultValue="-1"
+                android:title="@string/cat2_orientation" />
+        <CheckBoxPreference
+             	android:defaultValue="false"
+                android:key="@string/key_autorun"
+                android:summary="@string/cat2_autorun_summary"
+                android:title="@string/cat2_autorun" />
+ 		<CheckBoxPreference
+             	android:defaultValue="false"
+                android:key="@string/key_autoclose"
+                android:summary="@string/cat2_autoclose_summary"
+                android:title="@string/cat2_autoclose" />
+    </PreferenceCategory>
+    
+	<PreferenceCategory
+	    android:title="@string/cat3" >
+		<!--  default is green color - 0xFF00FF00 in 4 bytes int -->
+		<Preference
+                android:key="@string/key_show_system"
+                android:defaultValue=""
+                android:summary="@string/cat3_system_summary"
+                android:title="@string/cat3_system" />
+        <Preference
+                android:key="@string/key_color"
+                android:defaultValue="-16711936"
+                android:title="@string/cat3_color" />
+        <Preference
+                android:key="@string/key_background_color"
+                android:defaultValue="-16777216"
+                android:title="@string/cat3_background_color" />
+         <ListPreference
+             	android:defaultValue="@string/value_dot_flash"
+                android:key="@string/key_dot"
+                android:title="@string/cat3_dot" />
+         <CheckBoxPreference
+             	android:defaultValue="false"
+                android:key="@string/key_seconds"
+                android:summary="@string/cat3_seconds_summary"
+                android:title="@string/cat3_seconds" />
+         <CheckBoxPreference
+             	android:defaultValue="true"
+                android:key="@string/key_now"
+                android:summary="@string/cat3_now_weather_summary"
+                android:title="@string/cat3_now_weather" />
+         <CheckBoxPreference
+             	android:defaultValue="true"
+                android:key="@string/key_today"
+                android:summary="@string/cat3_today_summary"
+                android:title="@string/cat3_today" />
+         <CheckBoxPreference
+             	android:defaultValue="true"
+                android:key="@string/key_sun"
+                android:summary="@string/cat3_sun_summary"
+                android:title="@string/cat3_sun" />
+         <CheckBoxPreference
+             	android:defaultValue="true"
+                android:key="@string/key_alarm"
+                android:summary="@string/cat3_alarm_summary"
+                android:title="@string/cat3_alarm" />
+         <CheckBoxPreference
+             	android:defaultValue="true"
+                android:key="@string/key_weather_24h"
+                android:summary="@string/cat3_weather_24h_summary"
+                android:title="@string/cat3_weather_24h" />
+         <CheckBoxPreference
+             	android:defaultValue="true"
+                android:key="@string/key_weather_week"
+                android:summary="@string/cat3_weather_week_summary"
+                android:title="@string/cat3_weather_week" />
+    </PreferenceCategory>
+</PreferenceScreen>

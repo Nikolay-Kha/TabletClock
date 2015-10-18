@@ -1,0 +1,231 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:id="@+id/rootView"
+    tools:context=".ClockActivity" >
+    
+   		<View
+   		    android:id="@+id/dummyView1"
+		    android:layout_weight="1"
+		    android:layout_width="fill_parent"
+		    android:layout_height="0dp"/> 
+		       
+	    <lcf.clock.BigTextView
+		    android:id="@+id/timeView"
+		    android:gravity="center_vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"/>
+	    
+	    <LinearLayout 
+	        android:id="@+id/layoutToday"
+	        android:orientation="vertical"
+	        android:gravity="center"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content">
+
+		   <LinearLayout 
+		        android:id="@+id/layout1"
+		        android:gravity="top"
+		        android:orientation="horizontal"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content">
+		        
+		        <TextView
+			        android:id="@+id/dummyView3" 
+			        android:visibility="gone"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"/> 
+			    <lcf.clock.BigTextView
+			        android:layout_gravity="bottom"
+			        android:id="@+id/temperature"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			         />
+		
+				<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+				    android:layout_gravity="bottom"
+		            android:id="@+id/weatherNow"
+			        android:layout_width="wrap_content" 
+			        android:layout_height="wrap_content"/>
+			    
+				<LinearLayout 
+			        android:id="@+id/layout3"
+			        android:orientation="vertical"
+			        android:layout_width="fill_parent"
+			        android:gravity="right"
+			        android:layout_height="wrap_content">
+			        <lcf.clock.BigTextView
+			            android:gravity="center_vertical"
+				        android:id="@+id/alarm1"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+			      	/>
+				    <lcf.clock.BigTextView
+				        android:gravity="center_vertical"
+				        android:id="@+id/date1"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				      />
+				    <lcf.clock.BigTextView
+				        android:gravity="center_vertical"
+				        android:id="@+id/date2"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				      />
+				 </LinearLayout>
+		    
+		    </LinearLayout>
+	    
+		    <LinearLayout 
+		        android:id="@+id/layoutForecast"
+		        android:orientation="horizontal"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content" >
+	
+				<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+		            android:id="@+id/weatherSlot1"
+		            android:layout_weight="1"
+			        android:layout_width="wrap_content" 
+			        android:layout_height="wrap_content"/>
+				
+				<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+		            android:id="@+id/weatherSlot2"
+		            android:layout_weight="1"
+			        android:layout_width="wrap_content" 
+			        android:layout_height="wrap_content"/>
+				
+				<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+		            android:id="@+id/weatherSlot3"
+		            android:layout_weight="1"
+			        android:layout_width="wrap_content" 
+			        android:layout_height="wrap_content"/>
+				
+				<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+		            android:id="@+id/weatherSlot4"
+		            android:layout_weight="1"
+			        android:layout_width="wrap_content" 
+			        android:layout_height="wrap_content"/>
+		    
+		    </LinearLayout>
+	    </LinearLayout>
+	    	
+	    <LinearLayout 
+	        android:id="@+id/layoutWeekForecast"
+	        android:orientation="vertical"
+	        android:gravity="center"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:baselineAligned="false">
+		    
+	        <LinearLayout 
+	            android:layout_gravity="top"
+	            android:orientation="horizontal"
+		        android:id="@+id/layouExtraHs"
+		        android:gravity="right|top"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content">
+				
+		         <lcf.clock.BigTextView
+		            android:gravity="center_vertical"
+			        android:id="@+id/extraData"
+			        android:layout_weight="1"
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"/>
+		         <lcf.clock.BigTextView
+		            android:gravity="center_vertical"
+			        android:id="@+id/alarm2"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"/>
+	         </LinearLayout>
+	         
+		    <LinearLayout 
+		        android:id="@+id/layoutWeekForecastHs"
+		        android:orientation="horizontal"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+				
+		        <LinearLayout 
+			        android:id="@+id/wwflayout1"
+			        android:orientation="vertical"
+			        android:layout_weight="1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content">
+	
+					<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+			            android:id="@+id/weatherWeekSlot1"
+				        android:layout_width="wrap_content" 
+				        android:layout_height="wrap_content"/>
+					
+					<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+			            android:id="@+id/weatherWeekSlot5"
+				        android:layout_width="wrap_content" 
+				        android:layout_height="wrap_content"/>
+				</LinearLayout>
+				
+		         <LinearLayout 
+			        android:id="@+id/wwflayout2"
+			        android:orientation="vertical"
+			        android:layout_weight="1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content">
+	
+					<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+			            android:id="@+id/weatherWeekSlot2"
+				        android:layout_width="wrap_content" 
+				        android:layout_height="wrap_content"/>
+					
+					<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+			            android:id="@+id/weatherWeekSlot6"
+				        android:layout_width="wrap_content" 
+				        android:layout_height="wrap_content"/>
+				</LinearLayout>
+				
+		          <LinearLayout 
+			        android:id="@+id/wwflayout3"
+			        android:orientation="vertical"
+			        android:layout_weight="1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content">
+	
+					<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+			            android:id="@+id/weatherWeekSlot3"
+				        android:layout_width="wrap_content" 
+				        android:layout_height="wrap_content"/>
+					
+					<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+			            android:id="@+id/weatherWeekSlot7"
+				        android:layout_width="wrap_content" 
+				        android:layout_height="wrap_content"/>
+				</LinearLayout>
+				
+		        <LinearLayout 
+			        android:id="@+id/wwflayout4"
+			        android:orientation="vertical"
+			        android:layout_weight="1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content">
+	
+					<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+			            android:id="@+id/weatherWeekSlot4"
+				        android:layout_width="wrap_content" 
+				        android:layout_height="wrap_content"/>
+					
+					<lcf.clock.WeatherView class="lcf.weather.view.WeatherView"
+			            android:id="@+id/weatherWeekSlot8"
+				        android:layout_width="wrap_content" 
+				        android:layout_height="wrap_content"/>
+				</LinearLayout>
+	    	</LinearLayout>
+	    </LinearLayout>
+	    
+	    <View
+	        android:id="@+id/dummyView2" 
+		    android:layout_weight="1"
+		    android:layout_width="fill_parent"
+		    android:layout_height="0dp"/> 
+	    
+</LinearLayout>
