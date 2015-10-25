@@ -1,0 +1,72 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* LICENSE
+* README.md
+* fonts/
+* fonts/S7.sfd
+* image/
+* image/digital_clock_oc.svg
+* image/m1.svg
+* image/m2.svg
+* image/m3.svg
+* image/m4.svg
+* image/m5.svg
+* image/m6.svg
+* image/m7.svg
+* image/m8.svg
+* image/p01d.svg
+* image/p01n.svg
+* image/p02d.svg
+* image/p02n.svg
+* image/p03.svg
+* image/p04.svg
+* image/p08.svg
+* image/p09.svg
+* image/p10.svg
+* image/p11.svg
+* image/p12.svg
+* image/p13.svg
+* image/p14.svg
+* image/p50.svg
+* image/sivvus_weather_symbols.svg
+* proguard-project.txt
+* screenshots/
+* screenshots/ss1.png
+* screenshots/ss2.png
+* screenshots/ss3.png
+* screenshots/ss4.png
+* screenshots/ss5.png
+* screenshots/ss6.png
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* assets/ => app/src/main/assets/
+* lint.xml => app/lint.xml
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

@@ -54,7 +54,7 @@ public class BatteryScreenReciever {
 													BatteryManager.EXTRA_SCALE, 0));*/
 						} else {
 							/*Log.i("tag",
-									"keeç screen "
+									"keep screen "
 											+ intent.getIntExtra(
 													BatteryManager.EXTRA_LEVEL, 0)
 											+ "/"

@@ -48,11 +48,11 @@ abstract class OWMWeatherTagParser {
 
 		while (xpp.getEventType() != XmlPullParser.END_DOCUMENT) {
 			switch (xpp.getEventType()) {
-			// начало документа
+			// document start
 			case XmlPullParser.START_DOCUMENT:
 				resultList = new ArrayList<Weather>();
 				break;
-			// начало тэга
+			// tag start
 			case XmlPullParser.START_TAG:
 				if (xpp.getName().equals("time")) {
 					weather = new Weather();
@@ -229,7 +229,7 @@ abstract class OWMWeatherTagParser {
 					}
 				}
 				break;
-			// конец тэга
+			// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 			case XmlPullParser.END_TAG:
 				if (xpp.getName().equals("name")) {
 					nameTag = false;
@@ -244,7 +244,7 @@ abstract class OWMWeatherTagParser {
 					weather = null;
 				}
 				break;
-			// содержимое тэга
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 			case XmlPullParser.TEXT:
 				if (countryTag && city != null) {
 					city.setCountry(xpp.getText());

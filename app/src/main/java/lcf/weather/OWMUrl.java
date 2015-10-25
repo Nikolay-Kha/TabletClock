@@ -7,13 +7,14 @@ import java.net.URL;
 import java.util.Locale;
 
 abstract class OWMUrl {
+	private static final String OWM_APIKEY = "1bb5226ac7cc4c180f487affc89eb7a7";
 	private static final String WEATHER_ICON_URL = "http://openweathermap.org/img/w/%s.png";
-	private static final String WEATHER_NOW_URL = "http://api.openweathermap.org/data/2.5/weather?mode=xml&units=metric&lang=%s&id=%d";
-	private static final String WEATHER_DAYLY_FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=xml&cnt=%d&units=metric&lang=%s&id=%d";
-	private static final String WEATHER_FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/?mode=xml&cnt=%d&units=metric&lang=%s&id=%d";
-	private static final String CITY_SEARCH_URL_BY_NAME = "http://api.openweathermap.org/data/2.5/find?&q=%s&type=like&sort=population&units=metric&cnt=30&mode=xml";
-	private static final String CITY_SEARCH_URL_BY_COORDS = "http://api.openweathermap.org/data/2.5/find?&lat=%f&lon=%f&sort=population&units=metric&cnt=30&mode=xml";
-	private static final String CITY_BY_CURRENT_IP_JSON = "http://openweathermap.org/data/weather/"; // no xml version, old version
+	private static final String WEATHER_NOW_URL = "http://api.openweathermap.org/data/2.5/weather?mode=xml&units=metric&lang=%s&id=%d&APPID=" + OWM_APIKEY;
+	private static final String WEATHER_DAYLY_FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=xml&cnt=%d&units=metric&lang=%s&id=%d&APPID=" + OWM_APIKEY;
+	private static final String WEATHER_FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/?mode=xml&cnt=%d&units=metric&lang=%s&id=%d&APPID=" + OWM_APIKEY;
+	private static final String CITY_SEARCH_URL_BY_NAME = "http://api.openweathermap.org/data/2.5/find?&q=%s&type=like&sort=population&units=metric&cnt=30&mode=xml&APPID=" + OWM_APIKEY;
+	private static final String CITY_SEARCH_URL_BY_COORDS = "http://api.openweathermap.org/data/2.5/find?&lat=%f&lon=%f&sort=population&units=metric&cnt=30&mode=xml&APPID=" + OWM_APIKEY;
+	private static final String CITY_BY_CURRENT_IP_JSON = "http://openweathermap.org/data/weather&APPID=" + OWM_APIKEY; // no xml version, old version
 	// http://openweathermap.org/data/weather/?type=json - upper url is stable
 	private static final String CACHE_NONE = "";
 	private static final String CACHE_NOW = "now.xml";
