@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'android'
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
@@ -12,6 +12,9 @@ android {
 
     buildTypes {
         release {
+            lintOptions {
+                disable 'MissingTranslation'
+            }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
