@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android'
+
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId "lcf.clock"
         minSdkVersion 7
-        targetSdkVersion 19
+        targetSdkVersion 25
     }
 
     buildTypes {
