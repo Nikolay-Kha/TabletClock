@@ -11,7 +11,7 @@ abstract class OWMUrl {
 	private static final String WEATHER_ICON_URL = "http://openweathermap.org/img/w/%s.png";
 	private static final String WEATHER_NOW_URL = "http://api.openweathermap.org/data/2.5/weather?mode=xml&units=metric&lang=%s&id=%d&APPID=" + OWM_APIKEY;
 	private static final String WEATHER_DAYLY_FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=xml&cnt=%d&units=metric&lang=%s&id=%d&APPID=" + OWM_APIKEY;
-	private static final String WEATHER_FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/?mode=xml&cnt=%d&units=metric&lang=%s&id=%d&APPID=" + OWM_APIKEY;
+	private static final String WEATHER_FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast?mode=xml&cnt=%d&units=metric&lang=%s&id=%d&APPID=" + OWM_APIKEY;
 	private static final String CITY_SEARCH_URL_BY_NAME = "http://api.openweathermap.org/data/2.5/find?&q=%s&type=like&sort=population&units=metric&cnt=30&mode=xml&APPID=" + OWM_APIKEY;
 	private static final String CITY_SEARCH_URL_BY_COORDS = "http://api.openweathermap.org/data/2.5/find?&lat=%f&lon=%f&sort=population&units=metric&cnt=30&mode=xml&APPID=" + OWM_APIKEY;
 	private static final String CITY_BY_CURRENT_IP_JSON = "http://openweathermap.org/data/weather&APPID=" + OWM_APIKEY; // no xml version, old version
@@ -102,4 +102,4 @@ abstract class OWMUrl {
 		return new OWMUrlImplementation(
 				String.format(WEATHER_ICON_URL, weather), CACHE_NONE);
 	}
-};
+}
