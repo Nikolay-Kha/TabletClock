@@ -20,6 +20,10 @@ class WeatherWorker { // for openweathermap, shouldn't call run() in UI thread
 	private boolean imideatlyRequest = false;
 	private final static int REPEAT_COUNT = 10;
 
+	/** Forecast is returned in 3 hours intervals, so 24/3 = 8.
+	 *  Plus 1 for current weather. */
+	private static final int NUMBER_OF_READINGS_FOR_24H_FORECAST = 9;
+
 	public WeatherWorker(File cacheDir, int cityId, Runnable callbackRunnable,
 			Handler handler, int daysForForecast) {
 		mCallbackRunnable = callbackRunnable;
@@ -43,7 +47,7 @@ class WeatherWorker { // for openweathermap, shouldn't call run() in UI thread
 		OWMUrl nowUrl = OWMUrl.getNowWeatherUrl(mCityId);
 		OWMUrl forecastUrl = OWMUrl.getForecastDaylyWeatherUrl(mCityId,
 				mDaysForForecast);
-		OWMUrl detailUrl = OWMUrl.getForecastWeatherUrl(mCityId, 1);
+		OWMUrl detailUrl = OWMUrl.getForecastWeatherUrl(mCityId, NUMBER_OF_READINGS_FOR_24H_FORECAST);
 		boolean initRequere = false;
 
 		if (!forceNetwork) {
