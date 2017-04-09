@@ -9,15 +9,17 @@ import android.os.Handler;
 class CityWorker extends Thread {
 	private static List<CityWorker> workingThreads = new ArrayList<CityWorker>(); // to keep from GC
 	private final String mPattern;
-	CitiesCallback mCitiesCallback;
-	Handler mHandler;
+	private final String mApiKey;
+	private final CitiesCallback mCitiesCallback;
+	private final Handler mHandler;
 
-	CityWorker(String pat, CitiesCallback cb) { // if mPattern == null - looking by current ip
+	CityWorker(String pat, CitiesCallback cb, String apiKey) { // if mPattern == null - looking by current ip
 		workingThreads.add(this);
 		mPattern = pat;
 		mCitiesCallback = cb;
 		mCitiesCallback.setPattern(pat);
 		mHandler = new Handler();
+		mApiKey = apiKey;
 		start();
 	}
 
@@ -26,13 +28,13 @@ class CityWorker extends Thread {
 		List<City> list = null;
 		List<Weather> wlist = null;
 		if (mPattern == null) {
-			PointF p = OWMWeather.getCoordsByCurrentIp();
+			PointF p = OWMWeather.getCoordsByCurrentIp(mApiKey);
 			if (p != null) {
-				wlist = OWMWeather.get(OWMUrl.getFindCityUrlByCoords(p.x, p.y),
+				wlist = OWMWeather.get(OWMUrl.getFindCityUrlByCoords(p.x, p.y, mApiKey),
 						null, false, null);
 			}
 		} else {
-			wlist = OWMWeather.get(OWMUrl.getFindCityUrlByName(mPattern), null,
+			wlist = OWMWeather.get(OWMUrl.getFindCityUrlByName(mPattern, mApiKey), null,
 					false, null);
 		}
 		if (wlist != null) {

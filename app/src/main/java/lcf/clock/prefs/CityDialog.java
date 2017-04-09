@@ -30,7 +30,7 @@ public class CityDialog extends PrefsDialog implements OnEditorActionListener,
 	private Button mSearchButton;
 	private CityListAdapter mCitiesListAdapter;
 	private SharedPreferences mSharedPreferences;
-	private static final String CITY_NOT_SET = " ";
+	private AppPreferences mAppPreferences;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +58,8 @@ public class CityDialog extends PrefsDialog implements OnEditorActionListener,
 		mCitiesList.setAdapter(mCitiesListAdapter);
 		mCitiesList.setOnItemClickListener(this);
 
-		mSharedPreferences = PreferenceManager
-				.getDefaultSharedPreferences(this);
+		mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+		mAppPreferences = new AppPreferences(this, mSharedPreferences);
 	}
 
 	@Override
@@ -82,8 +82,8 @@ public class CityDialog extends PrefsDialog implements OnEditorActionListener,
 	@Override
 	protected void onResume() {
 		super.onResume();
-		String c = getCityName(mSharedPreferences, this);
-		if (c.length() != 0 && !c.equals(CITY_NOT_SET)) {
+		String c = mAppPreferences.getCityName();
+		if (c.length() != 0 && !c.equals(AppPreferences.CITY_NOT_SET)) {
 			int p = c.lastIndexOf(",");
 			if (p > 0) {
 				mSearchLine.setText(c.substring(0, p));
@@ -123,14 +123,15 @@ public class CityDialog extends PrefsDialog implements OnEditorActionListener,
 			}
 		};
 
+		String apiKey = mAppPreferences.getApiKey();
 		if (byIp) {
-			WeatherMain.findNearestCitiesByCurrentIP(cc);
+			WeatherMain.findNearestCitiesByCurrentIP(cc, apiKey);
 		} else {
 			String s = mSearchLine.getText().toString();
 			if (s.length() == 0) {
-				WeatherMain.findNearestCitiesByCurrentIP(cc);
+				WeatherMain.findNearestCitiesByCurrentIP(cc, apiKey);
 			} else {
-				WeatherMain.findCities(s, cc);
+				WeatherMain.findCities(s, cc, apiKey);
 			}
 		}
 	}
@@ -145,29 +146,5 @@ public class CityDialog extends PrefsDialog implements OnEditorActionListener,
 						CityListAdapter.getCityReadable(c, this))
 				.putInt(getString(R.string.key_city_id), c.getId()).commit();
 		finish();
-	}
-
-	public static boolean checkFirstTime(SharedPreferences sharedPreferences,
-			Context context) {
-		if (getCityName(sharedPreferences, context).length() == 0) {
-			sharedPreferences
-					.edit()
-					.putString(context.getString(R.string.key_city),
-							CITY_NOT_SET).commit();
-			return true;
-		}
-		return false;
-	}
-
-	public static String getCityName(SharedPreferences sharedPreferences,
-			Context context) {
-		return sharedPreferences.getString(
-				context.getString(R.string.key_city), "");
-	}
-
-	public static int getCityId(SharedPreferences sharedPreferences,
-			Context context) {
-		return sharedPreferences.getInt(
-				context.getString(R.string.key_city_id), 0);
 	}
 }

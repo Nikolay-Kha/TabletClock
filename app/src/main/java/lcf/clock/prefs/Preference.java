@@ -210,6 +210,7 @@ public class Preference extends PreferenceActivity implements
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
 		android.preference.Preference pref = findPreference(key);
+		AppPreferences appPreferences = new AppPreferences(this, sharedPreferences);
 
 		if (key.equals(getString(R.string.key_brightness))
 				|| key.equals(getString(R.string.key_brightness_manual_value))) {
@@ -235,8 +236,21 @@ public class Preference extends PreferenceActivity implements
 				pref.setSummary(ColorDialog.getBackgroundColorString(
 						sharedPreferences, this));
 			} else if (key.equals(getString(R.string.key_city))) {
-				pref.setSummary(CityDialog.getCityName(sharedPreferences, this));
+				updateCitySummaryAndEnablement(appPreferences);
+			} else if (key.equals(getString(R.string.key_api_key))) {
+				updateCitySummaryAndEnablement(appPreferences);
 			}
+		}
+	}
+
+	private void updateCitySummaryAndEnablement(AppPreferences appPreferences) {
+		android.preference.Preference pref = findPreference(getString(R.string.key_city));
+		boolean enabled = !"".equals(appPreferences.getApiKey());
+		pref.setEnabled(enabled);
+		if (enabled) {
+			pref.setSummary(appPreferences.getCityName());
+		} else {
+			pref.setSummary(R.string.preference_city_disabled_summary);
 		}
 	}
 

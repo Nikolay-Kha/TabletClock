@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Locale;
 
 import lcf.clock.TimeViewUpdater.DOT_MODE;
+import lcf.clock.prefs.AppPreferences;
 import lcf.clock.prefs.BrightnessDialog;
 import lcf.clock.prefs.CityDialog;
 import lcf.clock.prefs.ColorDialog;
@@ -374,6 +375,7 @@ public class ClockActivity extends Activity {
         PreferenceManager.setDefaultValues(this, R.xml.preference, false); // because of this call
         SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(this);
+        AppPreferences appPreferences = new AppPreferences(this, prefs);
 
         int orientation = Integer.parseInt(prefs.getString(
                 getString(R.string.key_orientation),
@@ -461,13 +463,15 @@ public class ClockActivity extends Activity {
 
         int weatherUpdateIntervalMin = Integer.parseInt(prefs.getString(
                 getString(R.string.key_update), "0"));
-        int cityId = CityDialog.getCityId(prefs, this);
+        int cityId = appPreferences.getCityId();
+
+        String apiKey = appPreferences.getApiKey();
         if (weather24 == View.VISIBLE || now == View.VISIBLE
                 || weatherWeek == View.VISIBLE || sun == View.VISIBLE) {
-            mWeatherReciever.start(cityId, weatherUpdateIntervalMin);
+            mWeatherReciever.start(cityId, weatherUpdateIntervalMin, apiKey);
         }
 
-        if (CityDialog.checkFirstTime(prefs, this)) {
+        if (appPreferences.checkFirstTime()) {
             final Intent intent = new Intent(this, CityDialog.class);
             startActivity(intent);
             Toast.makeText(this, getString(R.string.firstTime),

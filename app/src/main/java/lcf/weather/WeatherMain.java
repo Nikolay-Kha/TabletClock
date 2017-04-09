@@ -6,14 +6,18 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import android.os.Handler;
+import android.util.Log;
 
 public class WeatherMain {
+	private static final String TAG = "WeatherMain";
+
 	private WeatherWorker mWeatherWorker = null;
 	private final Runnable mCallbackRunnable;
 	private Timer mTimer = null;
 	private final Handler mHandler = new Handler();
 	private int mInterval = 30;
 	private int mCityId;
+	private String mApiKey;
 	private final int mDaysForForecast;
 	private final File mCacheDir;
 
@@ -23,8 +27,10 @@ public class WeatherMain {
 		mCacheDir = cacheDir;
 	}
 
-	public void start(int cityId, int updateIntervalMIN) {
+	public void start(int cityId, int updateIntervalMIN, String apiKey) {
+		Log.d(TAG, "start: " + cityId + ", " + updateIntervalMIN + ", " + apiKey);
 		mCityId = cityId;
+		mApiKey = apiKey;
 		stop();
 		if (cityId == 0) {
 			return;
@@ -66,16 +72,16 @@ public class WeatherMain {
 
 	public void softUpdate() { // just asking about call callback, data will be updated only if it needed
 		if (isWorking()) {
-			start(mCityId, mInterval);
+			start(mCityId, mInterval, mApiKey);
 		}
 	}
 
 	private void startWorker(boolean forceNetwork) { // do not call in UI thread, call it using timer
-		if (mWeatherWorker == null || mWeatherWorker.getCityId() != mCityId) {
+		if (mWeatherWorker == null || mWeatherWorker.getCityId() != mCityId || !mWeatherWorker.getApiKey().equals(mApiKey)) {
 			mWeatherWorker = new WeatherWorker(mCacheDir, mCityId,
-					mCallbackRunnable, mHandler, mDaysForForecast);
+					mCallbackRunnable, mHandler, mDaysForForecast, mApiKey);
 		}
-		if (mWeatherWorker != null && mWeatherWorker.isWorking()) {
+		if (mWeatherWorker.isWorking()) {
 			return;
 		}
 		mWeatherWorker.run(forceNetwork);
@@ -102,18 +108,17 @@ public class WeatherMain {
 		return mWeatherWorker.isErrorWhileLastUpdate();
 	}
 
-	public static void findCities(String pat, CitiesCallback cb) { //result will come in the same thread that call this method
-		new CityWorker(pat, cb); // null for pat to find nearest cities by current IP 
+	public static void findCities(String pat, CitiesCallback cb, String apiKey) { //result will come in the same thread that call this method
+		new CityWorker(pat, cb, apiKey); // null for pat to find nearest cities by current IP
 
 	}
 
-	public static void findNearestCitiesByCurrentIP(CitiesCallback cb) { //result will come in the same thread that call this method
-		new CityWorker(null, cb);
+	public static void findNearestCitiesByCurrentIP(CitiesCallback cb, String apiKey) { //result will come in the same thread that call this method
+		new CityWorker(null, cb, apiKey);
 
 	}
 
 	public boolean isWorking() {
 		return mTimer != null;
 	}
-
 }

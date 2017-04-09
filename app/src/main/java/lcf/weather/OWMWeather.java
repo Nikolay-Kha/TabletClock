@@ -82,7 +82,7 @@ abstract class OWMWeather {
 			List<Weather> result = OWMWeatherTagParser.parse(streamForXml);
 
 			if (result != null && result.size() > 0 && cacheDirForStore != null
-					&& url.isCachable()) {
+					&& url.isCachable() && baos != null) {
 				FileOutputStream fo = null;
 				try {
 					fo = new FileOutputStream(new File(cacheDirForStore,
@@ -99,7 +99,7 @@ abstract class OWMWeather {
 			}
 			return result;
 		} catch (Exception e) {
-			Log.i("tag", "OWMWeather get Exception - " + e.toString());
+			Log.i(TAG, "OWMWeather get Exception", e);
 			return null;
 		} finally {
 			if (stream != null) {
@@ -111,10 +111,10 @@ abstract class OWMWeather {
 		}
 	}
 
-	public static PointF getCoordsByCurrentIp() {
+	public static PointF getCoordsByCurrentIp(String apiKey) {
 		InputStream stream = null;
 		try {
-			stream = OWMUrl.getFindCityUrlByIpJson().download();
+			stream = OWMUrl.getFindCityUrlByIpJson(apiKey).download();
 			BufferedReader reader = new BufferedReader(new InputStreamReader( // debug
 					stream));
 			String line = null;

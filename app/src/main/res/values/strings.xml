@@ -62,8 +62,10 @@
 	<string name="outdated">The data out of date. Check internet connection and device time.</string>
 	<string name="cat1">Weather</string>
 	<string name="cat2">Hardware</string>
-	<string name="cat3">Appearance</string>	
-		
+	<string name="cat3">Appearance</string>
+
+	<string name="preference_api_key">API Key</string>
+    <string name="preference_city_disabled_summary">Set API key to select city</string>
 	<string name="cat1_city">City</string>
 	<string name="cat1_update_period">Weather update period</string>
 	<string name="cat1_temperature_units">Temperature units</string>	
@@ -113,6 +115,5 @@
 	<!-- Check WeatherUnits to view indexes for default units -->
 	<string name="temperature_default_units">0</string>
 	<string name="pressure_default_units">0</string>
-	<string name="speed_default_units">0</string>	
-	
+	<string name="speed_default_units">0</string>
 </resources>
