@@ -19,6 +19,7 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 abstract class OWMWeather {
+	private static final String TAG = "OWMWeather";
 	private final static int CACHE_OUTDATE_TIMEOUT = 25 * 60 * 1000; // 25 min
 
 	/* deprecated due to the bad icons quality */
@@ -89,6 +90,7 @@ abstract class OWMWeather {
 					fo.write(baos.toByteArray());
 					fo.flush();
 				} catch (Exception e) {
+					Log.e(TAG, "Error", e);
 				} finally {
 					if (fo != null) {
 						fo.close();
