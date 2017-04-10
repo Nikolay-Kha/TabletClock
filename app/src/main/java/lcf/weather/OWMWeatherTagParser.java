@@ -1,5 +1,7 @@
 package lcf.weather;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
@@ -15,6 +17,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 abstract class OWMWeatherTagParser {
+	private static final String TAG = "OWMWeatherTagParser";
 
 	static Date readDate(String strDate) {
 		Date res = null;
@@ -28,6 +31,7 @@ abstract class OWMWeatherTagParser {
 			try {
 				res = sdf.parse(strDate);
 			} catch (ParseException e1) {
+				Log.e(TAG, "unable to parse date: '" + strDate + "'", e1);
 			}
 		}
 		return res;

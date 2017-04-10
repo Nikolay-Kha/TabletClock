@@ -19,6 +19,7 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 abstract class OWMWeather {
+	private static final String TAG = "OWMWeather";
 	private final static int CACHE_OUTDATE_TIMEOUT = 25 * 60 * 1000; // 25 min
 
 	/* deprecated due to the bad icons quality */
@@ -81,7 +82,7 @@ abstract class OWMWeather {
 			List<Weather> result = OWMWeatherTagParser.parse(streamForXml);
 
 			if (result != null && result.size() > 0 && cacheDirForStore != null
-					&& url.isCachable()) {
+					&& url.isCachable() && baos != null) {
 				FileOutputStream fo = null;
 				try {
 					fo = new FileOutputStream(new File(cacheDirForStore,
@@ -89,6 +90,7 @@ abstract class OWMWeather {
 					fo.write(baos.toByteArray());
 					fo.flush();
 				} catch (Exception e) {
+					Log.e(TAG, "Error", e);
 				} finally {
 					if (fo != null) {
 						fo.close();
@@ -97,7 +99,7 @@ abstract class OWMWeather {
 			}
 			return result;
 		} catch (Exception e) {
-			Log.i("tag", "OWMWeather get Exception - " + e.toString());
+			Log.i(TAG, "OWMWeather get Exception", e);
 			return null;
 		} finally {
 			if (stream != null) {
@@ -109,10 +111,10 @@ abstract class OWMWeather {
 		}
 	}
 
-	public static PointF getCoordsByCurrentIp() {
+	public static PointF getCoordsByCurrentIp(String apiKey) {
 		InputStream stream = null;
 		try {
-			stream = OWMUrl.getFindCityUrlByIpJson().download();
+			stream = OWMUrl.getFindCityUrlByIpJson(apiKey).download();
 			BufferedReader reader = new BufferedReader(new InputStreamReader( // debug
 					stream));
 			String line = null;

@@ -8,6 +8,8 @@ import android.os.Looper;
 import android.util.Log;
 
 class WeatherWorker { // for openweathermap, shouldn't call run() in UI thread
+	private static final String TAG = "WeatherWorker";
+
 	private List<Weather> mToday = null;
 	private List<Weather> mForecast = null;
 	private final Runnable mCallbackRunnable;
@@ -17,16 +19,23 @@ class WeatherWorker { // for openweathermap, shouldn't call run() in UI thread
 	private final int mCityId;
 	private final int mDaysForForecast;
 	private final File mCacheDir;
+	private final String mApiKey;
 	private boolean imideatlyRequest = false;
 	private final static int REPEAT_COUNT = 10;
 
+	/** Forecast is returned in 3 hours intervals, so 24/3 = 8.
+	 *  Plus 1 for current weather. */
+	private static final int NUMBER_OF_READINGS_FOR_24H_FORECAST = 9;
+
 	public WeatherWorker(File cacheDir, int cityId, Runnable callbackRunnable,
-			Handler handler, int daysForForecast) {
+						 Handler handler, int daysForForecast, String apiKey) {
+		Log.d(TAG, "new");
 		mCallbackRunnable = callbackRunnable;
 		mHandler = handler;
 		mCityId = cityId;
 		mDaysForForecast = daysForForecast;
 		mCacheDir = cacheDir;
+		mApiKey = apiKey;
 	}
 
 	public void run(boolean forceNetwork) { // do not call in UI thread
@@ -40,10 +49,9 @@ class WeatherWorker { // for openweathermap, shouldn't call run() in UI thread
 		int repeatCount = 0;
 		List<Weather> today;
 		List<Weather> forecast;
-		OWMUrl nowUrl = OWMUrl.getNowWeatherUrl(mCityId);
-		OWMUrl forecastUrl = OWMUrl.getForecastDaylyWeatherUrl(mCityId,
-				mDaysForForecast);
-		OWMUrl detailUrl = OWMUrl.getForecastWeatherUrl(mCityId, 1);
+		OWMUrl nowUrl = OWMUrl.getNowWeatherUrl(mCityId, mApiKey);
+		OWMUrl forecastUrl = OWMUrl.getForecastDaylyWeatherUrl(mCityId, mDaysForForecast, mApiKey);
+		OWMUrl detailUrl = OWMUrl.getForecastWeatherUrl(mCityId, NUMBER_OF_READINGS_FOR_24H_FORECAST, mApiKey);
 		boolean initRequere = false;
 
 		if (!forceNetwork) {
@@ -156,5 +164,9 @@ class WeatherWorker { // for openweathermap, shouldn't call run() in UI thread
 
 	public void askForImideatlyAnswer() {
 		imideatlyRequest = true;
+	}
+
+	public String getApiKey() {
+		return mApiKey;
 	}
 }

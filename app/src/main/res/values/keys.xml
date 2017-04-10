@@ -10,6 +10,7 @@
 	<string name="key_brightness_manual_value">brightness_manual_value</string>
 	<string name="key_color">color</string>
 	<string name="key_background_color">background_color</string>
+	<string name="key_api_key">api_key</string>
 	<string name="key_city">city</string>
 	<string name="key_city_id">city_id</string>
     <string name="key_update">update</string>
@@ -30,5 +31,4 @@
     <string name="key_weather_24h">weather_24h</string>
     <string name="key_weather_week">weather_week</string>
     <string name="key_flip">flip</string>
-    
 </resources>
